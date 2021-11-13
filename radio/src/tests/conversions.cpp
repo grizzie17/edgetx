@@ -261,7 +261,7 @@ TEST(Conversions, ConversionX7From23)
   swarnstate_t sw_mask = (1 << (NUM_SWITCHES * 3)) - 1;
   
   // check only the "allowed switches"
-  EXPECT_EQ(state & sw_mask, g_model.switchWarningState & sw_mask);
+  EXPECT_EQ(state & sw_mask, g_model.switchWarningState & 0x7FFF);
   
   EXPECT_STRNEQ("Test", g_model.header.name);
   EXPECT_EQ(MODULE_TYPE_R9M_PXX1, g_model.moduleData[EXTERNAL_MODULE].type);
