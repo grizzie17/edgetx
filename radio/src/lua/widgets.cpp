@@ -302,12 +302,14 @@ static void l_pushtableint(const char * key, int value)
   lua_settable(lsWidgets, -3);
 }
 
+#if defined(HARDWARE_TOUCH)
 static void l_pushtablebool(const char * key, bool value)
 {
   lua_pushstring(lsWidgets, key);
   lua_pushboolean(lsWidgets, value);
   lua_settable(lsWidgets, -3);
 }
+#endif
 
 class LuaWidgetFactory: public WidgetFactory
 {
