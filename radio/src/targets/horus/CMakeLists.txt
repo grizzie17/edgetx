@@ -63,7 +63,7 @@ if (PCB STREQUAL X10)
     ${TARGET_SRC}
     ../common/arm/stm32/audio_dac_driver.cpp
     )
-  if (NOT PCBREV STREQUAL TX16S)
+  if (NOT PCBREV STREQUAL TX16S  AND  NOT PCBREV STREQUAL T16)
       set(TARGET_SRC
         ${TARGET_SRC}
         ../common/arm/stm32/sticks_pwm_driver.cpp
